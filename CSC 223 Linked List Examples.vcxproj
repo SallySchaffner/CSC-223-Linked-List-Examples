@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="CSC 223 Linked List Examples.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SinglyLinkedList.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
