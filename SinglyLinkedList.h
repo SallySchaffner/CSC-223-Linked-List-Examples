@@ -68,7 +68,7 @@ public:
             delete toDelete;
             count--;
         }
-    }
+        }
 
     // Function to return the number of nodes in the list
     int getCount()
@@ -80,9 +80,9 @@ public:
     void display() {
         Node* temp = head;
         while (temp) {
-            std::cout << temp->data << std::endl;
             temp = temp->next;
         }
+        std::cout << "nullptr\n";
     }
 
     // Destructor to free memory
