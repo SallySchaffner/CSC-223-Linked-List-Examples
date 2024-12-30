@@ -10,17 +10,22 @@ struct Node {
 };
 
 class SinglyLinkedList {
-private:
+protected:
     Node* head; // Pointer to the first node
+    Node* tail; // Pointer to last node
+    int count; // Number of nodes in the list
 
 public:
-    SinglyLinkedList() : head(nullptr) {} // Constructor initializes the head to nullptr
+    SinglyLinkedList() : head(nullptr), tail(nullptr), count(0) {} // Constructor initializes the head to nullptr
 
     // Function to insert a node at the beginning
     void insertAtBeginning(int value) {
         Node* newNode = new Node(value);
         newNode->next = head;
         head = newNode;
+        if (count == 0)
+            tail = head;
+        count++;
     }
 
     // Function to insert a node at the end
@@ -28,6 +33,8 @@ public:
         Node* newNode = new Node(value);
         if (!head) {
             head = newNode;
+            tail = newNode;
+            count++;
             return;
         }
         Node* temp = head;
@@ -35,6 +42,7 @@ public:
             temp = temp->next;
         }
         temp->next = newNode;
+        count++;
     }
 
     // Function to delete the first occurrence of a value
@@ -45,6 +53,7 @@ public:
             Node* toDelete = head;
             head = head->next;
             delete toDelete;
+            count--;
             return;
         }
 
@@ -57,7 +66,14 @@ public:
             Node* toDelete = temp->next;
             temp->next = temp->next->next;
             delete toDelete;
+            count--;
         }
+    }
+
+    // Function to return the number of nodes in the list
+    int getCount()
+    {
+        return count;
     }
 
     // Function to display the linked list
@@ -67,7 +83,7 @@ public:
             std::cout << temp->data << " -> ";
             temp = temp->next;
         }
-        std::cout << "nullptr\n";
+        std::cout << "nullptr" << std::endl;
     }
 
     // Destructor to free memory

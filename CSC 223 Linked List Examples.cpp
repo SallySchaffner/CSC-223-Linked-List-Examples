@@ -1,17 +1,53 @@
-// CSC 223 Linked List Examples.cpp : Demonstrate a singly linked list
-#include "SinglyLinkedList.h"
+//This program tests various operation of a linked list
+//34 62 21 10 15 90 66 53 7 120 88 36 90 11 17 24 10 -999
+
+#include <iostream>
+#include "intLinkedList.h"
+
+using namespace std;
 
 
-int main() {
-    SinglyLinkedList list;
-    list.insertAtBeginning(10);
-    list.insertAtEnd(20);
-    list.insertAtEnd(30);
-    list.display(); // Output: 10 -> 20 -> 30 -> nullptr
+int main()
+{
+    intLinkedList list;
 
-    list.deleteValue(20);
-    list.display(); // Output: 10 -> 30 -> nullptr
+    intLinkedList evensList;
+    intLinkedList oddsList;
+
+    int num;
+
+    cout << "Enter integers ending with -999" << endl;
+    cin >> num;
+
+    while (num != -999)
+    {
+        list.insertAtEnd(num);
+        cin >> num;
+    }
+
+    cout << endl;
+
+    cout << "list: (" << list.getCount() << "): ";
+    list.display();
+    cout << endl;
+
+    list.splitEvensOddsList(evensList, oddsList);
+
+    cout << "evensList (" << evensList.getCount() << "): ";
+    evensList.display();
+    cout << endl;
+
+    cout << "oddsList: (" << oddsList.getCount() << "): ";
+    oddsList.display();
+    cout << endl;
+
+    cout << "list: (" << list.getCount() << "): ";
+    list.display();
+    cout << endl;
 
     return 0;
 }
+
+
+
 
