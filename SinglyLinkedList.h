@@ -80,6 +80,7 @@ public:
     void display() {
         Node* temp = head;
         while (temp) {
+            std::cout << temp->data << " -> ";
             temp = temp->next;
         }
         std::cout << "nullptr\n";

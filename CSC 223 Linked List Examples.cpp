@@ -26,17 +26,14 @@ void BuildListForward()
     std::cout << std::endl;
     std::cout << "Delete the first node" << std::endl;
     list.deleteValue(10);
-    std::cout << list.getCount() << std::endl;
     list.display();
     std::cout << std::endl;
     std::cout << "Delete the last node" << std::endl;
     list.deleteValue(50);
-    std::cout << list.getCount() << std::endl;
     list.display();
     std::cout << std::endl;
     std::cout << "Delete the middle node" << std::endl;
     list.deleteValue(30);
-    std::cout << list.getCount() << std::endl;
     list.display();
     std::cout << std::endl;
 }
@@ -53,17 +50,14 @@ void BuildListBackward()
     std::cout << std::endl;
     std::cout << "Delete the first node" << std::endl;
     list.deleteValue(50);
-    std::cout << list.getCount() << std::endl;
     list.display();
     std::cout << std::endl;
     std::cout << "Delete the last node" << std::endl;
     list.deleteValue(10);
-    std::cout << list.getCount() << std::endl;
     list.display();
     std::cout << std::endl;
     std::cout << "Delete the middle node" << std::endl;
     list.deleteValue(30);
-    std::cout << list.getCount() << std::endl;
     list.display();
     std::cout << std::endl;
 
