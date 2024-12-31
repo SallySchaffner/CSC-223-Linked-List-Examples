@@ -15,6 +15,17 @@ private:
     Node* tail; // Pointer to last node
     int count; // Number of nodes in the list
 
+    // Function to recursively print the list in reverse
+    void reversePrint(Node* node)
+    {
+        if (node != nullptr)
+        {
+            int temp = node->data;
+            reversePrint(node->next);
+            std::cout << temp << " <- ";
+        }
+    }
+
 public:
     SinglyLinkedList() : head(nullptr), tail(nullptr), count(0) {} // Constructor initializes the head to nullptr
 
@@ -79,7 +90,9 @@ public:
     // Function to display the linked list
     void display() {
         Node* temp = head;
+        std::cout << "Head -> "; 
         while (temp) {
+            std::cout << temp->data << " -> ";
             temp = temp->next;
         }
         std::cout << "nullptr\n";
@@ -93,5 +106,13 @@ public:
             head = head->next;
             delete temp;
         }
+    }
+
+    // Public function to start reversPrint recursion
+    void reversePrint()
+    {
+        std::cout << "nullptr" << " <- ";
+        reversePrint(head);
+        std::cout << "Head" << std::endl;
     }
 };
